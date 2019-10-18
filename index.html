@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Google Maps Places</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>MEET ME IN THE MIDDLE</h1>
+    <div style="float: right; background-color: lightblue">
+      <div id="map" style="width:650px; height:600px;"></div>
+    </div>
+    <div
+      style="float: left; width: 400px; height:600px; background-color:mistyrose"
+    >
+      <form>
+        <div class="form-group">
+          <label for="addressA">Where you are:</label>
+          <textarea class="form-control" id="addressA" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="AddressB">Where they are:</label>
+          <textarea class="form-control" id="addressB" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="radius">Search Radius:</label>
+          <textarea class="form-control" id="radius" value="5"
+          placeholder="In KM" rows="1"></textarea>
+        </div>
+      </form>
+      <form name="frm_map" id="frm_map">
+        <table>
+
+          <tr>
+            <th>Types</th>
+            <td>
+              <div id="type_holder" style="height: 200px; overflow-y: scroll;">
+                <!-- Dynamic Content -->
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input
+                type="button"
+                value="Show"
+                id="submit"
+                onclick="renderMap();"
+              />
+              <input type="reset" value="Reset" />
+            </td>
+          </tr>
+        </table>
+      </form>
+
+    </div>
+    <!--<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCLuLHKGw8PztomZfoeyiv19WmUdMUhCQ&libraries=places&callback=renderMap"
+    async defer></script>-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNne6TTHmVK0n_fL0ogNWkvNwDTdf9lsI&libraries=places&callback=initialize"
+      async
+      defer
+    ></script>
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>
